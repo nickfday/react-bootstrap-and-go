@@ -1,9 +1,11 @@
 {
-  "name": "React Bootstrap and Go",
+  "name": "react-bootstrap-and-go",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nickfday.github.io/react-bootstrap-and-go/",
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
+    "gh-pages": "^1.0.0",
     "popper.js": "^1.12.5",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
@@ -19,9 +21,13 @@
     "react-scripts": "1.0.12"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }

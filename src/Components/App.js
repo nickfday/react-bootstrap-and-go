@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
+        <Router basename="/react-bootstrap-and-go">
           <div>
             <Navigation />
             <div className="container content">
