@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button, Collapse, NavbarToggler } from "reactstrap";
+//import { Blog } from "./Blog";
 
 class Navigation extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class Navigation extends Component {
   }
 
   render() {
+    console.log(this.props.state.articles);
     return (
       <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <Link className="navbar-brand" to="/">
@@ -34,6 +36,19 @@ class Navigation extends Component {
             <NavLink exact to="/about" className="nav-link">
               <span>About</span>
             </NavLink>
+            <Link
+              exact
+              to={{
+                pathname: "/blog",
+                state: {
+                  articles: this.props.state.articles,
+                  loaded: this.props.state.loaded
+                }
+              }}
+              className="nav-link"
+            >
+              <span>Blog</span>
+            </Link>
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input
