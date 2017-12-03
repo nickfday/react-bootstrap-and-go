@@ -54,7 +54,8 @@ export class Blog extends Component {
   }
 }
 
-function BlogRow(props) {
+export function BlogRow(props) {
+  console.log(props);
   return (
     <div className="row">
       {Object.values(props.item).map(i => (
@@ -77,10 +78,10 @@ function BlogRow(props) {
                     }
                   }}
                 >
-                  <h3>{i.title}</h3>
+                  <h3 className="title">{i.title}</h3>
                 </Link>
-                <p>{i.summary}</p>
-                <p>{i.date}</p>
+                <p className="body">{i.summary}</p>
+                <p className="date">{i.date}</p>
               </div>
             </div>
           </div>
