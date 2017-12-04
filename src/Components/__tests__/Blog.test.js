@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { Blog, BlogRow } from "../Blog";
-import { shallow, configure } from "enzyme";
+import { shallow, mount, render, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 
@@ -20,35 +20,33 @@ const testItem = {
 };
 
 describe("<Blog />", () => {
-  //Test view
-  it("renders an wrapper area 1", () => {
+  it("it outputs the expected wrapper class", () => {
     const wrapper = shallow(<Blog />);
     expect(wrapper.find("div.Blog").length).toEqual(1);
   });
 });
 
 describe("<BlogRow />", () => {
-  //Test view
-  it("renders a title", () => {
+  it("outputs the expected title", () => {
     const wrapper = shallow(<BlogRow item={[testItem]} />);
     expect(wrapper.find("div.post .title").text()).toEqual(
       "My First Post Ever!"
     );
   });
 
-  it("renders the matching body", () => {
+  it("outputs the expected body", () => {
     const wrapper = shallow(<BlogRow item={[testItem]} />);
     expect(wrapper.find("div.post .body").text()).toEqual(
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     );
   });
 
-  it("renders the matching date", () => {
+  it("outputs the expected date", () => {
     const wrapper = shallow(<BlogRow item={[testItem]} />);
     expect(wrapper.find("div.post .date").text()).toEqual("06/11/2017");
   });
 
-  it("renders an img", () => {
+  it("outputs the expected image src", () => {
     const wrapper = shallow(<BlogRow item={[testItem]} />);
     expect(wrapper.find("div.post .img img").prop("src")).toEqual(
       "https://media.istockphoto.com/photos/man-using-laptop-computer-picture-id590062300?s=2048x2048"
