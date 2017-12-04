@@ -39,7 +39,6 @@ export class Blog extends Component {
   }
 
   render() {
-    console.log(this);
     let articles = this.state.articles;
     return (
       <div className="Blog">
@@ -55,7 +54,6 @@ export class Blog extends Component {
 }
 
 export function BlogRow(props) {
-  console.log(props);
   return (
     <div className="row">
       {Object.values(props.item).map(i => (
