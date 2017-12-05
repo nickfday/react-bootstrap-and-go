@@ -24,14 +24,14 @@
     "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.7.0",
     "eslint-plugin-react": "^7.3.0",
+    "jest-cli": "^21.2.1",
     "prettier": "^1.7.0",
     "react-scripts": "1.0.12",
     "react-test-renderer": "^16.2.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start": "npm run watch-css | react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=node",
